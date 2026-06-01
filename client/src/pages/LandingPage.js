@@ -120,7 +120,7 @@ export default function LandingPage({ onStart }) {
       </section>
 
       <footer className="landing-footer">
-        © 2024 Art Therapy Website — Developed by Aarav
+        © 2026 Art Therapy Website — Developed by Aarav
       </footer>
     </div>
   );
