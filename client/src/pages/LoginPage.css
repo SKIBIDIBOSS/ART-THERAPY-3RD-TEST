@@ -1,0 +1,18 @@
+.login-bg { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 24px; }
+.login-back { position: fixed; top: 24px; left: 24px; z-index: 10; }
+.login-container { width: 100%; max-width: 440px; background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius-lg); padding: 48px 40px; box-shadow: var(--shadow-glow); position: relative; z-index: 1; }
+.login-header { text-align: center; margin-bottom: 32px; }
+.login-icon { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: rgba(200,169,110,0.1); border: 1px solid rgba(200,169,110,0.2); border-radius: 50%; margin: 0 auto 20px; animation: glow-pulse 3s ease-in-out infinite; }
+.login-title { font-family: var(--font-display); font-size: 36px; font-weight: 300; color: var(--text); margin-bottom: 8px; }
+.login-sub { color: var(--text2); font-size: 14px; }
+.login-tabs { display: flex; background: var(--bg2); border-radius: 100px; padding: 4px; margin-bottom: 28px; }
+.tab-btn { flex: 1; padding: 9px; border: none; background: transparent; color: var(--text2); border-radius: 100px; cursor: pointer; font-family: var(--font-body); font-size: 13px; transition: all 0.25s; }
+.tab-btn.active { background: var(--surface2); color: var(--text); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.login-form { display: flex; flex-direction: column; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-error { background: rgba(196,112,112,0.1); border: 1px solid rgba(196,112,112,0.25); border-radius: var(--radius-sm); color: #e89898; font-size: 13px; padding: 10px 14px; }
+.btn.w-full { width: 100%; justify-content: center; }
+.login-hint { text-align: center; margin-top: 20px; color: var(--text3); font-size: 13px; }
+.link-btn { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 13px; font-family: var(--font-body); text-decoration: underline; text-underline-offset: 3px; }
+.link-btn:hover { color: var(--accent2); }
