@@ -1,0 +1,85 @@
+.landing { min-height: 100vh; position: relative; overflow: hidden; }
+.landing-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+.landing-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(6,5,10,0.7); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  opacity: 0; transform: translateY(-10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.landing-header.loaded { opacity: 1; transform: translateY(0); }
+.landing-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 20px; color: var(--text); }
+.landing-nav { display: flex; align-items: center; gap: 32px; }
+.landing-nav a { color: var(--text2); font-size: 14px; text-decoration: none; transition: color 0.2s; }
+.landing-nav a:hover { color: var(--text); }
+
+.landing-hero {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 120px 24px 80px;
+}
+.op0 { opacity: 0; }
+.hero-eyebrow { margin-bottom: 24px; }
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 300; line-height: 0.95;
+  color: var(--text); margin-bottom: 28px; letter-spacing: -0.02em;
+}
+.hero-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--lavender));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub { font-size: 17px; color: var(--text2); line-height: 1.7; margin-bottom: 48px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+.hero-mandala-deco {
+  position: absolute; width: 480px; height: 480px;
+  right: 4%; top: 50%; transform: translateY(-50%);
+  pointer-events: none; opacity: 0.12;
+}
+@media (max-width: 1100px) { .hero-mandala-deco { display: none; } }
+.deco-ring {
+  position: absolute; border: 1px solid var(--accent); border-radius: 50%;
+  left: 50%; top: 50%; transform: translate(-50%,-50%);
+  animation: spin linear infinite;
+}
+.r1 { width: 460px; height: 460px; animation-duration: 60s; opacity: 0.3; }
+.r2 { width: 340px; height: 340px; animation-duration: 40s; animation-direction: reverse; opacity: 0.5; }
+.r3 { width: 220px; height: 220px; animation-duration: 25s; opacity: 0.6; }
+.r4 { width: 100px; height: 100px; animation-duration: 15s; animation-direction: reverse; opacity: 0.8; }
+.deco-center {
+  position: absolute; left: 50%; top: 50%; width: 16px; height: 16px;
+  transform: translate(-50%,-50%); background: var(--accent);
+  border-radius: 50%; box-shadow: 0 0 20px var(--accent);
+}
+.deco-spoke {
+  position: absolute; left: 50%; top: 50%;
+  width: 2px; height: 220px;
+  transform-origin: 50% 0;
+  transform: translateX(-50%) rotate(var(--deg));
+  background: linear-gradient(to bottom, var(--accent) 0%, transparent 100%);
+  opacity: 0.3;
+}
+
+.landing-section { position: relative; z-index: 1; padding: 120px 48px; text-align: center; }
+.section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.section-title { font-family: var(--font-display); font-size: clamp(36px,5vw,56px); font-weight: 300; margin-bottom: 64px; }
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+.step-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 40px 32px; text-align: left;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.step-card:hover { border-color: var(--border2); transform: translateY(-4px); }
+.step-num { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: var(--accent); opacity: 0.4; display: block; margin-bottom: 16px; line-height: 1; }
+.step-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 12px; }
+.step-card p { color: var(--text2); font-size: 14px; line-height: 1.7; }
+
+.landing-footer { position: relative; z-index: 1; text-align: center; padding: 32px; border-top: 1px solid var(--border); color: var(--text3); font-size: 12px; }
